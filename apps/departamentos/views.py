@@ -1,8 +1,9 @@
-from django.shortcuts import render
+from django.urls import reverse_lazy
 from django.views.generic import (
     ListView,
     CreateView,
     UpdateView,
+    DeleteView
 )
 
 from .models import Departamento
@@ -32,3 +33,10 @@ class DepartamentoUpdate(UpdateView):
     fields = ['nome']
 
 
+class DepartamentoDelete(DeleteView):
+    model = Departamento
+
+
+class DepartamentoDelete(DeleteView):
+    model = Departamento
+    success_url = reverse_lazy('list_departamentos')
