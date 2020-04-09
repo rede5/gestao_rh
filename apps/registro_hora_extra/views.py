@@ -23,7 +23,7 @@ class HoraExtraEdit(UpdateView):
     form_class = RegistroHoraExtraForm
 
     def get_form_kwargs(self):
-        kwargs = super(HoraExtraNovo, self).get_form_kwargs()
+        kwargs = super(HoraExtraEdit, self).get_form_kwargs()
         kwargs.update({'user': self.request.user})
         return kwargs
 
